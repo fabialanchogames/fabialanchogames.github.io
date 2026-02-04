@@ -536,6 +536,14 @@
       <section id="otros" class="category hidden">
         <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">✨ Otros</h2>
         <div class="grid gap-8 md:grid-cols-2">
+            
+          <div class="bg-gray-800/70 rounded-2xl shadow-lg p-6 hover:scale-105 transform transition">
+            <h3 class="text-xl md:text-2xl font-bold mb-2">Spotify Premium (PC) - Spicetify</h3>
+            <p class="text-gray-300 mb-4">Código mágico para tener Spotify sin anuncios y con temas personalizados en PC.</p>
+            <button data-modal="modal-spotify" class="modal-open-btn w-full bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg font-bold block text-center">
+              🎵 Ver Código e Instrucciones
+            </button>
+          </div>
 
           <div class="bg-gray-800/70 rounded-2xl shadow-lg p-6 hover:scale-105 transform transition">
             <h3 class="text-xl md:text-2xl font-bold mb-2">Action and Stuff (Gratis)</h3>
@@ -604,6 +612,32 @@
   </div>
   
   <div id="modal-backdrop" class="modal-backdrop"></div>
+  
+  <div id="modal-spotify" class="modal-content">
+      <h2 class="text-2xl font-bold mb-4">🎵 Spotify Sin Anuncios (PC)</h2>
+      <div class="modal-info">
+Hola, quizás te confundes para saber qué es esto. Pues este código te sirve para tener Spotify sin anuncios en la app de PC (Spicetify).
+
+Lo que tienes que hacer:
+1. Desinstala Spotify si lo instalaste desde la Microsoft Store.
+2. Ve a la página oficial de Spotify y descarga el instalador .exe (si ya lo descargaste de ahí, no hay problema).
+3. Busca la app <b>PowerShell</b> en Windows y pégale el siguiente código:
+
+<div class="bg-black p-3 rounded border border-green-500 font-mono text-sm break-all mb-2 relative group">
+<span id="spotify-code">iwr -useb https://raw.githubusercontent.com/spicetify/cli/main/install.ps1 | iex</span>
+<button id="copy-spotify-btn" class="absolute top-1 right-1 bg-gray-700 hover:bg-gray-600 text-xs px-2 py-1 rounded">Copiar</button>
+</div>
+
+4. Dale Enter y espera... Si te pregunta Y o N, escribe <b>Y</b> y dale Enter.
+5. No cierres hasta que aparezca <code>USER/(tu nombre)</code>.
+6. Abre Spotify, dale al logo de carrito (Marketplace), descarga un addon de "Adblock" y reinicia Spotify.
+
+¡Listo! ;)
+      </div>
+      <button class="modal-close-btn w-full bg-gray-500 hover:bg-gray-600 px-4 py-2 rounded-lg font-bold block text-center mt-4">
+        Cerrar
+      </button>
+  </div>
   
   <div id="modal-cleip-info" class="modal-content">
       <h2 class="text-2xl font-bold mb-4">📖 SOBRE EL JUEGO</h2>
@@ -961,6 +995,22 @@ Son archivos de configuración extra para ahorrarse tiempo. Contiene las configu
       });
     }
     
+    // --- Script para el botón Copiar de Spotify ---
+    const copySpotifyBtn = document.getElementById('copy-spotify-btn');
+    if (copySpotifyBtn) {
+        copySpotifyBtn.addEventListener('click', () => {
+            const code = "iwr -useb https://raw.githubusercontent.com/spicetify/cli/main/install.ps1 | iex";
+            navigator.clipboard.writeText(code).then(() => {
+                copySpotifyBtn.textContent = "¡Copiado!";
+                setTimeout(() => {
+                    copySpotifyBtn.textContent = "Copiar";
+                }, 2000);
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        });
+    }
+
     // --- Script para Modals ---
     const openButtons = document.querySelectorAll('.modal-open-btn');
     const closeButtons = document.querySelectorAll('.modal-close-btn');
