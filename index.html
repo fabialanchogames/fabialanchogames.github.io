@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FB Games 🎮</title> <link rel="icon" href="cleip_milo.png" type="image/png">
+  <title>FB PROYECTS</title> 
+  <link rel="icon" href="cleip_milo.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -176,6 +177,13 @@
     .fade-text.visible {
         opacity: 1;
     }
+    
+    /* Animación flotante para los quesos */
+    @keyframes float-cheese {
+        0% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(180deg); }
+        100% { transform: translateY(0) rotate(360deg); }
+    }
 
   </style>
 </head>
@@ -185,7 +193,7 @@
     <img src="fabi_alancho_games.png" alt="Fabialancho Games Logo" class="w-48 md:w-64 rounded-full opacity-92">
     <div class="text-center md:text-left px-4">
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-wider text-orange-500">
-        🔥 FB Games 🔥
+        FB PROYECTS
       </h1>
       <p class="text-lg md:text-xl mt-2 font-bold">
         Grandes proyectos como tu :)
@@ -335,6 +343,34 @@
 
         <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">APPS</h2>
         <div class="grid gap-8 md:grid-cols-1">
+        
+        <div class="bg-gray-800/70 rounded-2xl shadow-lg p-6 mb-8 border-2 border-dashed border-red-500/60 relative overflow-hidden hover:scale-105 transform transition">
+            <div class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10 shadow-md">
+                ¡NUEVO!
+            </div>
+
+            <h3 class="text-xl md:text-2xl font-bold mb-2">🚀 KillLag Pro v0.14.0 (Script de Broma)</h3>
+            <p class="text-sm text-red-400 font-bold mb-1">Creado por FB PROYECTS</p>
+            
+            <div class="bg-gray-900/50 p-4 rounded-lg text-sm text-gray-300 mb-4 border border-gray-700">
+                <p class="mb-2 font-bold text-white">😈 ¡El "mejor" optimizador para trolear a tus panas!</p>
+                <ul class="list-none space-y-2">
+                    <li>💻 <b>SOLO PC:</b> Funciona únicamente en Windows. No lo abras en celular.</li>
+                    <li>🛡️ <b>100% SEGURO:</b> Es falso, no borra archivos ni destruye tu PC.</li>
+                    <li>🎭 <b>EL EFECTO:</b> Parece un optimizador real hasta que... ¡lluvia de Rick Rolls! 🕺</li>
+                    <li>⚠️ <b>CUIDADO:</b> Si dejas que se abran muchas ventanas, tu PC hará la <b>"murición rápida"</b> por el lag. 💀</li>
+                    <li>🆘 <b>SOLUCIÓN:</b> Ve al escritorio rápido (Win + D) y dale clic a <b>SALVADOR.bat</b> para detener el caos.</li>
+                </ul>
+            </div>
+
+            <div class="grid gap-2">
+              <a href="https://www.mediafire.com/file/4gh8fbeu8ywq41c/KillLag_by_FB_PROYECTS.zip/file" 
+                 target="_blank" class="bg-red-600 hover:bg-red-800 px-4 py-2 rounded-lg font-bold block text-center border-b-4 border-red-900 active:border-b-0 active:translate-y-1 transition-all">
+                 ⬇ Descargar Broma (Mediafire)
+              </a>
+            </div>
+        </div>
+
           <div class="bg-gray-800/70 rounded-2xl shadow-lg p-6 hover:scale-105 transform transition">
             <h3 class="text-xl md:text-2xl font-bold mb-2">🌀 Clipisito tu amiguito v0.10</h3>
             <p class="text-sm text-cyan-400">Creado por @fabialancho</p>
@@ -777,6 +813,10 @@ Carga tus preguntas, juega y refuerza tu conocimiento de una forma divertida y e
                     <td class="p-3 font-mono text-cyan-400">fb</td>
                     <td class="p-3">Animación secreta de introducción FB Games 🔥</td>
                 </tr>
+                <tr>
+                    <td class="p-3 font-mono text-cyan-400">que</td>
+                    <td class="p-3">So 🧀 (Efecto quesoso)</td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -810,6 +850,11 @@ Son archivos de configuración extra para ahorrarse tiempo. Contiene las configu
   <div id="special-yt-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: black; z-index: 10000; display: none; opacity: 0; transition: opacity 1s ease; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
     <h1 id="yt-main-text" class="neon-text-cyan fade-text" style="color: #00ffea; font-family: 'Orbitron', sans-serif; font-size: 3rem; margin-bottom: 20px;"></h1>
     <p id="yt-sub-text" class="fade-text" style="color: white; font-family: 'Orbitron', sans-serif; font-size: 1.5rem;"></p>
+  </div>
+
+  <div id="so-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: black; z-index: 10001; display: none; opacity: 0; transition: opacity 1s ease; justify-content: center; align-items: center; flex-direction: column; overflow: hidden;">
+    <h1 style="color: white; font-family: 'Orbitron', sans-serif; font-size: 10rem; z-index: 10; font-weight: bold; text-shadow: 0 0 20px yellow;">SO</h1>
+    <div id="cheese-container" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 1;"></div>
   </div>
 
   <script>
@@ -981,6 +1026,43 @@ Son archivos de configuración extra para ahorrarse tiempo. Contiene las configu
             setTimeout(() => { overlay.style.display = 'none'; promoStatus.textContent = ''; }, 10500);
           }
         
+        } else if (code === 'que') {
+            // --- NUEVO CODIGO: QUE SO ---
+            promoStatus.textContent = '🧀...';
+            promoStatus.className = 'text-sm mt-2 h-4 text-yellow-400';
+
+            const soOverlay = document.getElementById('so-overlay');
+            const cheeseContainer = document.getElementById('cheese-container');
+
+            if (soOverlay && cheeseContainer) {
+                cheeseContainer.innerHTML = '';
+                // Generar quesos aleatorios
+                for(let i=0; i<30; i++) {
+                    const cheese = document.createElement('span');
+                    cheese.textContent = '🧀';
+                    cheese.style.position = 'absolute';
+                    cheese.style.left = Math.random() * 100 + '%';
+                    cheese.style.top = Math.random() * 100 + '%';
+                    cheese.style.fontSize = (Math.random() * 3 + 1) + 'rem';
+                    cheese.style.opacity = '0.6';
+                    cheese.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    cheese.style.animation = `float-cheese ${Math.random() * 2 + 1}s infinite ease-in-out`;
+                    cheeseContainer.appendChild(cheese);
+                }
+
+                soOverlay.style.display = 'flex';
+                // Trigger reflow
+                void soOverlay.offsetWidth;
+                soOverlay.style.opacity = '1';
+
+                setTimeout(() => {
+                    soOverlay.style.opacity = '0';
+                    setTimeout(() => {
+                        soOverlay.style.display = 'none';
+                    }, 1000);
+                }, 3000);
+            }
+
         } else if (code === 'promo') {
             openModal('modal-promos');
             promoStatus.textContent = 'Abriendo lista... 📜';
